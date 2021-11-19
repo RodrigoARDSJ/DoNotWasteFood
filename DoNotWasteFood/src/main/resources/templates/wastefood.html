@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head th:include="_template :: head"></head>
+<body>
+
+	<header th:include="_template :: header"></header>
+	
+	<section class="card form">
+		<h2>Cadastrar ponto de coleta</h2>
+		
+		<form th:action="@{/wastefood}" method="post">
+			<label for="estoqueDeAlimento">Quantidade de estoque de alimento</label>
+			<input 
+				type="number" 
+				name="estoqueDeAlimento" 
+				id="estoqueDeAlimento" 
+			/>
+			
+			<label for="dataDeEntrega">Data de entrega</label>
+			<input name="dataDeEntrega" 
+				type="date"
+				id="dataDeEntrega" 
+			></input>
+			
+			<label for="tipoDeAlimento">Tipo de alimento</label>
+			<input type="text" name="tipoDeAlimento" id="tipoDeAlimento">
+			
+			<div class="buttons">
+				<a href="/home" class="button">Cancelar</a>
+				<button class="button primary">Salvar</button>
+			</div>
+			
+		</form>
+	</section>
+
+</body>
+</html>
