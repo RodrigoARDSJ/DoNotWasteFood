@@ -7,15 +7,13 @@
 
 	<header th:include="_template :: header"></header>
 
-
-	<div class="alert" th:if="${message != null}" th:text="${message}"></div>
-
 	<div class="card">
 		<main class="content">
-			<div class="user" th:each="wastefood : ${wastefood}">
-				<div class="user-info">
-					<h4 th:text="${wastefood.estoqueDeAlimento}"></h4>
-					<p th:text="${wastefood.tipoDeAlimento}"></p>
+			<div class="points" th:each="point : ${home}">
+				<div class="points-info">
+					Quantidade:<h4 th:text="${point.estoqueDeAlimento}"></h4>
+					Tipo de alimento:<h4 th:text="${point.tipoDeAlimento}"></h4>
+					Rua:<h4 th:text="${point.rua}"></h4>
 				</div>
 			</div>
 		</main>

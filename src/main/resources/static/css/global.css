@@ -2,14 +2,14 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 :root {
     --input-color: #404040;
-    --primary: #160526;
-    --secundary: #cf3b2e;
+    --primary: #F2E205;
+    --secundary: #F20505;
 }
 
 body {
     height: 100%;
     background: var(--primary);
-    color: #FFFFFF;
+    color: #00000;
     font-family: 'Quicksand', sans-serif;
     overflow: hidden;
 }
@@ -20,28 +20,16 @@ header{
 }
 
 h1 {
+	color: var(--secundary);
     font-family: Bebas Neue;
     font-size: 4.5rem;
     text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.5);
 }
 
-.login-info{
-	display: flex;
-	align-items: flex-start;
-	justify-content: center;
-}
-
-.login-info img{
-	margin: 0 1rem;
-}
-
-
 .card {
     display: flex;
     flex-direction: column;
-    margin: 5rem;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(61px);
+    background: #FFFF;
     border-radius: 20px;
 }
 
@@ -105,10 +93,4 @@ button.icon,
 .alert.error{
 	background: rgba(255, 255, 255, 0.05);
 	color: #FFF;
-}
-
-.avatar {
-    width: 32px;
-    height: 32px;
-    border-radius: 16px;
 }

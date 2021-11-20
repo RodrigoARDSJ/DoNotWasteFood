@@ -18,12 +18,9 @@
 }
 
 .form input[type=text],
-.form input[type=email],
-.form input[type=password],
-.form textarea
+.form input[type=date],
+.form input[type=number]
 {
-	background: rgba(255, 255, 255, 0.8);
-	border: none;
 	outline: none;
 	box-sizing: border-box;
 	border-radius: 5px;
@@ -31,10 +28,7 @@
 	font-size: 1.5rem;
 	color: var(--input-color);
 	padding-left: 1rem; 
-}
-
-.form textarea{
-	resize: vertical;
+	border: .5px solid grey;
 }
 
 .form label{
@@ -42,10 +36,9 @@
 }
 
 
-.form input[type=text]:focus,
-.form input[type=email]:focus,
-.form input[type=password]:focus,
-.form textarea:focus
+.form input[type=number]:focus,
+.form input[type=date]:focus,
+.form input[type=password]:focus
 {
 	border: 3px solid #3F5EFB;
 }

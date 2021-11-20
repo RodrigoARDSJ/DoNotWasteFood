@@ -30,5 +30,7 @@ public class CollectPoint {
 	private Calendar dataDeEntrega;
 	
 	private String tipoDeAlimento;
+	
+	private String rua;
 
 }

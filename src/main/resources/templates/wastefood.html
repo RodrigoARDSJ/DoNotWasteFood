@@ -8,7 +8,7 @@
 	<section class="card form">
 		<h2>Cadastrar ponto de coleta</h2>
 		
-		<form th:action="@{/wastefood}" method="post">
+		<form th:action="@{/}" method="post">
 			<label for="estoqueDeAlimento">Quantidade de estoque de alimento</label>
 			<input 
 				type="number" 
@@ -25,8 +25,11 @@
 			<label for="tipoDeAlimento">Tipo de alimento</label>
 			<input type="text" name="tipoDeAlimento" id="tipoDeAlimento">
 			
+			<label for="rua">Rua e numeração</label>
+			<input type="text" name="rua" id="rua">
+			
 			<div class="buttons">
-				<a href="/home" class="button">Cancelar</a>
+				<a href="/" class="button">Cancelar</a>
 				<button class="button primary">Salvar</button>
 			</div>
 			
