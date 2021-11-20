@@ -8,13 +8,14 @@
 	<section class="card form">
 		<h2>Cadastrar ponto de coleta</h2>
 		
-		<form th:action="@{/}" method="post">
+		<form th:action="@{/}" method="post"th:object="${collectPoint}">
 			<label for="estoqueDeAlimento">Quantidade de estoque de alimento</label>
 			<input 
 				type="number" 
 				name="estoqueDeAlimento" 
 				id="estoqueDeAlimento" 
 			/>
+			<span class="error" th:errors="*{estoqueDeAlimento}"></span>
 			
 			<label for="dataDeEntrega">Data de entrega</label>
 			<input name="dataDeEntrega" 
@@ -24,9 +25,11 @@
 			
 			<label for="tipoDeAlimento">Tipo de alimento</label>
 			<input type="text" name="tipoDeAlimento" id="tipoDeAlimento">
+			<span class="error" th:errors="*{tipoDeAlimento}"></span>
 			
 			<label for="rua">Rua e numeração</label>
 			<input type="text" name="rua" id="rua">
+			<span class="error" th:errors="*{rua}"></span>
 			
 			<div class="buttons">
 				<a href="/" class="button">Cancelar</a>

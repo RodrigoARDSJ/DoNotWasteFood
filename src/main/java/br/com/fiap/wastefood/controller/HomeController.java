@@ -27,7 +27,6 @@ public class HomeController {
 	@Autowired
 	private CollectPointRepository repository;
 
-
 	@GetMapping
 	public ModelAndView home() {
 		ModelAndView modelAndView = new ModelAndView("home");
@@ -39,6 +38,8 @@ public class HomeController {
 
 	@PostMapping
 	public String save(@Valid CollectPoint point, BindingResult result, RedirectAttributes redirect) {
+		if (result.hasErrors())
+			return "wastefood";
 		service.save(point, redirect);
 		return "redirect:/";
 	}
