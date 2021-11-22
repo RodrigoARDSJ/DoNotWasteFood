@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head th:include="_template :: head"></head>
+<body>
+
+	<header th:include="_template :: header"></header>
+
+	<section class="card form">
+		<h2>Cadastrar ponto de coleta</h2>
+
+		<form th:action="@{/edit}" method="post" th:object="${collectPoint}">
+			<input type="hidden" name="id" id="id" th:field="*{id}"> <label
+				for="estoqueDeAlimento">Quantidade de estoque de alimento</label> <input
+				type="number" name="estoqueDeAlimento" id="estoqueDeAlimento" />
+			<span class="error" th:errors="*{estoqueDeAlimento}"></span> <label
+				for="tipoDeAlimento">Tipo de alimento</label> <input type="text"
+				name="tipoDeAlimento" id="tipoDeAlimento"> <span
+				class="error" th:errors="*{tipoDeAlimento}"></span> <label for="rua">Rua
+				e numeração</label> <input type="text" name="rua" id="rua"> <span
+				class="error" th:errors="*{rua}"></span>
+
+			<div class="buttons">
+				<a href="/" class="button">Cancelar</a>
+				<button class="button primary">Salvar</button>
+			</div>
+
+		</form>
+	</section>
+
+</body>
+</html>

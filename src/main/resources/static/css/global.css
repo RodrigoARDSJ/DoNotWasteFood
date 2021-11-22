@@ -71,6 +71,11 @@ button.primary,
     color: #FFF;
 }
 
+.btnDelete {
+	color: #fff;
+	background: var(--secundary);
+}
+
 button.icon,
 .button.icon {
     padding: .5rem;

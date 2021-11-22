@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -38,15 +39,40 @@ public class HomeController {
 
 	@PostMapping
 	public String save(@Valid CollectPoint point, BindingResult result, RedirectAttributes redirect) {
-		if (result.hasErrors())
-			return "wastefood";
-		service.save(point, redirect);
-		return "redirect:/";
+		if (!result.hasErrors()) {
+			service.save(point);
+			return "redirect:/";
+		}else {
+			return "wastefood";			
+		}
 	}
 
 	@RequestMapping("new")
 	public String create(CollectPoint point) {
 		return "wastefood";
+	}
+	
+	@RequestMapping("edit/{id}")
+	public ModelAndView edit(@PathVariable Long id) {
+		ModelAndView modelAndView = new ModelAndView("wastefood-edit");
+		modelAndView.addObject("home", service.get(id));
+		return modelAndView;
+	}
+	
+	@PostMapping("edit")
+	public String edit(@Valid CollectPoint point, BindingResult result, RedirectAttributes redirect) {
+		if (!result.hasErrors()) {
+			service.save(point);
+			return "redirect:/";
+		}else {
+			return "wastefood";			
+		}
+	}
+	
+	@GetMapping("remove/{id}")
+	public String remove(@PathVariable Long id, RedirectAttributes redirect) {
+		repository.deleteById(id);
+		return "redirect:/";
 	}
 
 }

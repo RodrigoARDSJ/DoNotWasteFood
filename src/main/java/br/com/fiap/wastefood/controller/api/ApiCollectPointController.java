@@ -86,7 +86,6 @@ public class ApiCollectPointController {
 		CollectPoint collectPoint = optional.get();
 		
 		collectPoint.setTipoDeAlimento(newPoint.getTipoDeAlimento());
-		collectPoint.setDataDeEntrega(newPoint.getDataDeEntrega());
 		collectPoint.setEstoqueDeAlimento(newPoint.getEstoqueDeAlimento());
 		
 		repository.save(collectPoint);

@@ -1,13 +1,12 @@
 package br.com.fiap.wastefood.exception;
 
-public class NotAllowedException extends RuntimeException {
+public class CollectNotFoundException extends RuntimeException {
 
 	private static final long serialVersionUID = 1L;
 
-	public NotAllowedException(String message) {
+	public CollectNotFoundException(String message) {
 		super(message);
 	}
-	
 	
 
 }

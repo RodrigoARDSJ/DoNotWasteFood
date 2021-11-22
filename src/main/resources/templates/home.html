@@ -11,9 +11,20 @@
 		<main class="content">
 			<div class="points" th:each="point : ${home}">
 				<div class="points-info">
-					Quantidade:<h4 th:text="${point.estoqueDeAlimento}"></h4>
-					Tipo de alimento:<h4 th:text="${point.tipoDeAlimento}"></h4>
-					Rua:<h4 th:text="${point.rua}"></h4>
+					Quantidade:
+					<h4 th:text="${point.estoqueDeAlimento}"></h4>
+					Tipo de alimento:
+					<h4 th:text="${point.tipoDeAlimento}"></h4>
+					Rua:
+					<h4 th:text="${point.rua}"></h4>
+					<a th:href="${'/remove/' + point.id }">
+						<button class="btnDelete">Deletar</button>
+					</a>
+					<!-- 						<a th:href="${'/edit/' + point.id }"> 
+					<button class="btnDelete">
+					Alterar
+					</button>
+						</a> -->
 				</div>
 			</div>
 		</main>
